@@ -1,7 +1,8 @@
-import React from 'react'
+import React from 'react';
 //       ^--- default export!!!
-import { render } from 'react-dom'
+import { render } from 'react-dom';
 //       ^--- named export!!!
+
 /*
 💥💥💥 Rules when DECLARING a React component 💥💥💥
   - Name is capitalized
@@ -24,32 +25,43 @@ import { render } from 'react-dom'
   - Instead of passing args with parens, we pass them with attribute-like syntax
   - Don't forget all tags need to close correctly
 */
+import Playground from "./components/Playground";
 
 function App(props) {
   return (
-    <div className='container'>
-      {/**
-       * const divElem = document.createElement('div');
-       * divElem.classList.add('container');
-       * const myName = `My name is ${name}`;
-       */}
-      <h1>Welcome to React, Web { props.cohort }</h1>
-      <p>Instructor { props.instructor } is teaching { props.numStudents }.</p>
-      <p>He is very { props.happiness } because no one bought him chocolate for valentines day.</p>
-    </div>
+    <>
+      <div>
+        <p>OH NOES!!!</p>
+      </div>
+      <div className='container'>
+        {/**
+         * const divElem = document.createElement('div');
+         * divElem.classList.add('container');
+         * const myName = `My name is ${name}`;
+         */}
+        <h1>Welcome to React, Web { props.cohort }</h1>
+        <p>Instructor { props.instructor } is teaching { props.numStudents }.</p>
+        <p>He is very { props.happiness } because no one bought him chocolate for valentines day.</p>
+      </div>
+    </>
   )
 }
 
 render(
-  <App 
-    cohort="52" 
-    instructor={ "Casey" } 
-    numStudents="67" 
-    happiness="sad" 
-  />,
+  <Playground />
+  ,
   document.querySelector("#root")
 )
 
+/**
+ * <App 
+    cohort="52" 
+    instructor={ "Casey" }
+    numStudents="67" 
+    happiness="sad"
+    className="AHHH"
+  />
+ */
 // const props = {
 //   cohort: "52",
 //   instructor: "Casey",
