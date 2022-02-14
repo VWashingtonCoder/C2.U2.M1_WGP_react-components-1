@@ -48,7 +48,7 @@ function App(props) {
 }
 
 render(
-  <Playground />
+  <Playground name="Casey" />
   ,
   document.querySelector("#root")
 )
