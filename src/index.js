@@ -1,5 +1,7 @@
-import React from 'react'
-import { render } from 'react-dom'
+import React from 'react';
+//       ^--- default export!!!
+import { render } from 'react-dom';
+//       ^--- named export!!!
 
 /*
 💥💥💥 Rules when DECLARING a React component 💥💥💥
@@ -12,6 +14,9 @@ import { render } from 'react-dom'
   - We can INTERPOLATE 🔥 js expressions 🔥 using curly brackets
   - We interpolate attribute values and content
 */
+/**
+ * PROPS -> data passed from a parent to a child
+ */
 
 /*
 💥💥💥 Rules when USING a React component 💥💥💥
@@ -20,16 +25,48 @@ import { render } from 'react-dom'
   - Instead of passing args with parens, we pass them with attribute-like syntax
   - Don't forget all tags need to close correctly
 */
+import Playground from "./components/Playground";
 
 function App(props) {
   return (
-    <div className='container'>
-      <h1>Welcome to React, {props.track} rockstars!!</h1>
-    </div>
+    <>
+      <div>
+        <p>OH NOES!!!</p>
+      </div>
+      <div className='container'>
+        {/**
+         * const divElem = document.createElement('div');
+         * divElem.classList.add('container');
+         * const myName = `My name is ${name}`;
+         */}
+        <h1>Welcome to React, Web { props.cohort }</h1>
+        <p>Instructor { props.instructor } is teaching { props.numStudents }.</p>
+        <p>He is very { props.happiness } because no one bought him chocolate for valentines day.</p>
+      </div>
+    </>
   )
 }
 
 render(
-  <App track='Web' />,
-  document.querySelector('#root')
+  <Playground name="Casey" />
+  ,
+  document.querySelector("#root")
 )
+
+/**
+ * <App 
+    cohort="52" 
+    instructor={ "Casey" }
+    numStudents="67" 
+    happiness="sad"
+    className="AHHH"
+  />
+ */
+// const props = {
+//   cohort: "52",
+//   instructor: "Casey",
+//   numStudents: "67",
+//   happiness: "sad"
+// }
+
+// App(props);
